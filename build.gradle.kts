@@ -17,6 +17,7 @@ dependencies {
     implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.6.0") //for JVM platform
     implementation("io.github.blackmo18:kotlin-grass-core-jvm:1.0.0")
     implementation("io.github.blackmo18:kotlin-grass-parser-jvm:0.8.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.10")
 }
 
 tasks.test {
