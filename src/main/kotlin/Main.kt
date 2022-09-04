@@ -1,16 +1,15 @@
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
+import csv.setsCsv
+import csv.themesCsv
 import io.blackmo18.kotlin.grass.dsl.grass
-import java.io.File
+
 
 @OptIn(ExperimentalStdlibApi::class)
 fun main(args: Array<String>) {
-    val fileSets = File("src/main/resources/sets.csv")
-    val fileThemes = File("src/main/resources/themes.csv")
-
-    val csvSetsContent = csvReader().readAllWithHeader(fileSets)
+    val csvSetsContent = csvReader().readAllWithHeader(setsCsv)
     val legoSetList = grass<LegoSet>().harvest(csvSetsContent)
 
-    val csvThemesContent = csvReader().readAllWithHeader(fileThemes)
+    val csvThemesContent = csvReader().readAllWithHeader(themesCsv)
     val legoThemesList = grass<LegoTheme>().harvest(csvThemesContent)
 
     val searchRepository = SearchRepository(legoSetList,legoThemesList)
